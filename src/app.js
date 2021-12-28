@@ -41,12 +41,13 @@ app.get('/help', (req, res) => {
   })
 })
 app.get('/weather', (req, res) => {
-  if (!req.query.address) {
+  let address = req.query.address ? req.query.address : 'nigeria'
+  if (!address) {
     return res.send({
       err: 'must provide address parameter'
     })
   }
-  geocode(req.query.address, (err, geocodeData) => {
+  geocode(address, (err, geocodeData) => {
     if (err) {
       return res.send({ err })
     }
@@ -57,7 +58,8 @@ app.get('/weather', (req, res) => {
       }
       res.send({
         forecast: forecastData,
-        location: location
+        location,
+        address
       })
     })
   })
