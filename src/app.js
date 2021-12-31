@@ -52,7 +52,7 @@ app.get('/weather', (req, res) => {
       return res.send({ err })
     }
     const { lat, long, location } = geocodeData
-    forecast(lat, long, (err, forecastData) => {
+    forecast(lat, long, location, (err, forecastData) => {
       if (err) {
         return res.send({ err })
       }

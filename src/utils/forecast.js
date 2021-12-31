@@ -1,6 +1,6 @@
 const axios = require('axios').default
 
-const forecast = (lat, long, callback) => {
+const forecast = (lat, long, location, callback) => {
   const openweatherapiKey = '127d9e2cd99015fdd06f93737e4b535b'
   const openweatherapiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${openweatherapiKey}`
 
@@ -10,7 +10,7 @@ const forecast = (lat, long, callback) => {
       const data = res.data
       callback(
         undefined,
-        `It is currently ${data.current.temp} degrees out. With ${data.current.weather[0].description}`
+        `It is currently ${data.current.temp} degrees out in ${location}. With ${data.current.weather[0].description}`
       )
     })
     .catch(function (err) {

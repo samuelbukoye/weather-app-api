@@ -9,18 +9,19 @@
   </head>
   <body>
     <div class="main-content">
-    {{>header}}   
+      {{>header}}
       <p>Use this site to get your weather!</p>
-    
-    <form>
-      <input type="text" placeholder="location" />
-      <button>Search</button>
-    </form>
-    
-    </div>
-   {{>footer}}
 
-   
-  <script src="/js/app.js"></script>
+      <form>
+        <input type="text" placeholder="location" />
+        <button>Search</button>
+      </form>
+
+      <p id="messageOne"></p>
+      <p id="messageTwo"></p>
+    </div>
+    {{>footer}}
+
+    <script src="/js/app.js"></script>
   </body>
 </html>
