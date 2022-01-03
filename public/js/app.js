@@ -1,7 +1,3 @@
-const log = console.log
-
-log('thus is clint side js')
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#messageOne')
