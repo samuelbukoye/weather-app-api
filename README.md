@@ -2,5 +2,7 @@
 
 a weather application built with express and handlebars.js template engine 
 
-can be found in
+It reads data from mapbox.com and openweathermap.org
+
+It can be found in
 https://blittle-nodejs-weather-app.herokuapp.com/
